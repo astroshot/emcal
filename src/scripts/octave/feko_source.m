@@ -23,12 +23,12 @@ length = ds * (N - 1);
 
 % 束腰面
 z0 = wavelength * 0;
-Fdata = GaussField(freq, w0, ds, N, z0);
+Fdata = gauss_source(freq, w0, ds, N, z0);
 AG = 20 * log10(abs(Fdata) + eps);
 Fdata = reshape(Fdata, N * N, 1);
 
 F_abs = abs(Fdata);
-F_arg = angle(Fdata) * 180 / pi; %角度要用角度制
+F_arg = angle(Fdata) * 180 / pi; % 角度要用角度制
 
 % Ey
 Edata = zeros(N * N, 4);
